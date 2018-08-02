@@ -21,3 +21,6 @@ public class Checker {
         return true;
     }
 }
+/* time complexity is linear
+space time complexity is also linear
+ */
