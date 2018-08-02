@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class CharCount {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input1 = new Scanner(System.in);
-        System.out.println("Enter a file name to read");
+        System.out.println("Enter a file path you want to read");
         String str = input1.nextLine();
         //System.out.println(str);
         File file = new File(str);
