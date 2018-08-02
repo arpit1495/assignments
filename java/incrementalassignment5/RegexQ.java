@@ -9,10 +9,10 @@ public class RegexQ {
         boolean first = Pattern.matches("^[A-Z].*", txt);
         boolean last = Pattern.matches(".*\\.$", txt);
         if(first && last){
-            System.out.println("Yes!!");
+            System.out.println("Yes it matches!!");
         }
         else{
-            System.out.println("Sorry");
+            System.out.println("Sorry, not matched");
         }
     }
 }
