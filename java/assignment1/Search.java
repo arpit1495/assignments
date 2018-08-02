@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Search {
     private static void filefinder(String str){
-        File dir = new File("/home/lenovo/");
+        File dir = new File("/home/lenovo/");//home directory on my system
         File[] list = dir.listFiles();
         boolean check;
         int ctr = 0;
