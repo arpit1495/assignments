@@ -6,10 +6,23 @@ import java.util.Scanner;
 
 public class CharCount {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("/home/lenovo/Documents/assignments/java/incrementalassignment7/test.txt");
-        Scanner input = new Scanner(file);
+        Scanner input1 = new Scanner(System.in);
+        System.out.println("Enter a file name to read");
+        String str = input1.nextLine();
+        //System.out.println(str);
+        File file = new File(str);
+
+        Scanner input = null;
+        try {
+            input = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+            return;
+        }
+        //Hashmap is created for counting different character
         HashMap<Character, Integer> counter = new HashMap<>();
-        int ctr = -1;
+
+        int ctr = -1;//counter to count line break
         while (input.hasNextLine()) {
             ctr++;
             String line = input.nextLine();
@@ -25,19 +38,12 @@ public class CharCount {
 
         }
         input.close();
-        PrintStream text = null;
-        try {
-            text = new PrintStream(new File("output.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        PrintStream text;
+        text = new PrintStream(new File("output.txt"));//Search for file with name output
         System.setOut(text);
         for (Character key : counter.keySet()) {
             System.out.println("occurrence of '" + key + "' is  "+ counter.get(key));
         }
-        System.out.println(ctr);
-
-
-
+        System.out.println("occurrence of line break is " +ctr);
     }
 }
