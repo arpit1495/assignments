@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Range {
     public static void main(String[] args) throws ParseException {
@@ -28,7 +28,7 @@ public class Range {
         */
         //System.out.println("\n"+strArray[4]);
     }
-    public static void checker(String str) throws ParseException {
+    private static void checker(String str) throws ParseException {
         String[] strArray = str.split(" ");
         SimpleDateFormat seq = new SimpleDateFormat("dd-MM-yyyy");
         Date signUp = seq.parse(strArray[0]);
