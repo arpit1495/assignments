@@ -10,7 +10,7 @@ public class Pinger {
         try {
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String s = "";
+            String s;
             String str = "";
             // reading output stream of the command
             while ((s = inputStream.readLine()) != null) {
@@ -21,11 +21,11 @@ public class Pinger {
             int len = strArray.length;
             if((len % 2 == 0) && (len > 0)){
                 float median;
-                median = (Float.valueOf(strArray[len/2]) + Float.valueOf(strArray[len/2 + 1]))/2;
+                median = (Float.valueOf(strArray[len/2]) + Float.valueOf(strArray[len/2 - 1]))/2;
                 System.out.println("Median time for pings is " + median + "ms");
             }
             else if(len > 0){
-                float median = Float.valueOf(strArray[len/2 + 1]);
+                float median = Float.valueOf(strArray[len/2]);
                 System.out.println("Median time for pings is " + median + "ms.");
             }
             else{
@@ -50,3 +50,6 @@ public class Pinger {
 
     }
 }
+/*
+I have used the system utility to ping the server
+*/
