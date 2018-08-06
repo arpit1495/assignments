@@ -44,6 +44,10 @@ public class Range {
         s.add(Calendar.DAY_OF_MONTH, -30);
         start = s.getTime();
         if(current.before(start)){
+            if(currYear == (signYear + 1)){
+                System.out.println("No range");
+                return;
+            }
             s.setTime(signUp);
             s.set(Calendar.YEAR, currYear - 1);
             signUp = s.getTime();
