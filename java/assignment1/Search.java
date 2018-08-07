@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Search {
-    private static void filefinder(String str){
+    public static int fileFinder(String str){
         File dir = new File("/home/lenovo/");//home directory on my system
         File[] list = dir.listFiles();//all files present in directory
         boolean check;
@@ -21,6 +21,7 @@ public class Search {
             }
         }
         System.out.println("Found "+ctr+" files");
+        return ctr;
     }
     public static void main(String[] args) {
         boolean ctr = true;
@@ -35,7 +36,7 @@ public class Search {
                 ctr = false;
             }
             else{
-                filefinder(str);
+                fileFinder(str);
             }
         }
     }

@@ -7,7 +7,7 @@ public class Checker {
         System.out.println(str);
         System.out.println(checkAlph(str));
     }
-    private static boolean checkAlph(String str){
+    public static boolean checkAlph(String str){
         if(str.length() < 26){
             return false;
         }

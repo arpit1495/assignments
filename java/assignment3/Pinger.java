@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class Pinger {
 
-    public static void runSystemCommand(String[] command) {
+    public static boolean runSystemCommand(String ip, int c) {
+        String[] command = {"/bin/sh", "-c", "ping -c" + c + " "+ ip + " | grep 'time=' | awk '{print substr($7, 6, length($7))}' | sort -n"};
 
         try {
             Process p = Runtime.getRuntime().exec(command);
@@ -30,12 +31,15 @@ public class Pinger {
             }
             else{
                 System.out.println("Couldn't ping the host");
+                return false;
             }
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Couldn't ping the host");
+            return false;
         }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -45,8 +49,8 @@ public class Pinger {
         System.out.println("Enter the number of pings you want to make");
         int c = input.nextInt();
         //runSystemCommand("ping -c" + c + " "+ ip + " | awk '{print substr($7, 6, length($7))}'");
-        String[] cmd = {"/bin/sh", "-c", "ping -c" + c + " "+ ip + " | grep 'time=' | awk '{print substr($7, 6, length($7))}' | sort -n"};
-        runSystemCommand(cmd);
+        //String[] cmd = {"/bin/sh", "-c", "ping -c" + c + " "+ ip + " | grep 'time=' | awk '{print substr($7, 6, length($7))}' | sort -n"};
+        runSystemCommand(ip, c);
 
     }
 }

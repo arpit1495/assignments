@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Vampire {
-    private static boolean checker(int n){
+    public static boolean checker(int n){
         String num = Integer.toString(n);
         int[] numArray = stringArrayToIntArray(num);
         Arrays.sort(numArray);
