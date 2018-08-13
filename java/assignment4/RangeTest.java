@@ -6,7 +6,7 @@ class RangeTest {
 
     @Test
     void test1() {
-        assertEquals("No range", Range.checker("ABCDEFG"));
+        assertEquals("ParseException caught : Enter a valid date", Range.checker("ABCDEFG"));
     }
     @Test
     void test2() {

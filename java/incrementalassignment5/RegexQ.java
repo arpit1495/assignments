@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class RegexQ {
     public static boolean checker(String txt){
-        boolean first = Pattern.matches("^[A-Z].*", txt);
-        boolean last = Pattern.matches(".*\\.$", txt);
-        return(first && last);
+        //method will check for Capital letter at the start and period at the end
+        boolean first = Pattern.matches("^[A-Z].*\\.$", txt);
+        //boolean last = Pattern.matches(".*\\.$", txt);
+        return(first);
     }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

@@ -4,6 +4,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Search {
+    public static String[] checker(String str){
+        int n = fileFinder(str);
+        String[] arr = new String[n];
+        File dir = new File("/home/lenovo/");//home directory on my system
+        File[] list = dir.listFiles();//all files present in directory
+        boolean check;
+        int ctr = 0;
+        for (File f : list) {
+            String fileName = f.getName();//getting file name as string for comparsion using regex
+            Pattern pat = Pattern.compile(str);
+            Matcher mat = pat.matcher(fileName);
+            check = mat.matches();
+            if(check){
+                arr[ctr] = f.getAbsolutePath();
+                ctr++;
+            }
+        }
+        return arr;
+
+    }
     public static int fileFinder(String str){
         File dir = new File("/home/lenovo/");//home directory on my system
         File[] list = dir.listFiles();//all files present in directory
