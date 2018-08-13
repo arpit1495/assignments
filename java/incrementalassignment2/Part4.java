@@ -4,5 +4,6 @@ public class Part4 {
     }
     public static void main(String args[]){
         Part4[] arr = {new Part4("hello"), new Part4("world")};
+        //Now the constructor will print message this time
     }
 }

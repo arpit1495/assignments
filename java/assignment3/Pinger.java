@@ -13,7 +13,7 @@ public class Pinger {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String s;
             String str = "";
-            // reading output stream of the command
+            // reading output stream of the command line
             while ((s = inputStream.readLine()) != null) {
                 //System.out.println(s);
                 str += s + " ";

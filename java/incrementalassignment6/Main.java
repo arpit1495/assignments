@@ -1,17 +1,19 @@
 class Node<E>{
+    //Node class, used for creating nodes
     Node<E> next;
     E data;
     public Node(E data){
         this.data = data;
     }
-
-
 }
+
 class SList<E> {
+    //Slist class for creating a Singly linked list
     Node<E> head;
 
 
     public String toString(){
+        //returns the elements of list as strings
         Node<E> current = head;
         //System.out.print("[");
         String str = "";
@@ -22,6 +24,7 @@ class SList<E> {
         return str;
     }
     public SListIterator<E> iterator(){
+        //this method will create a object of SListIterator
         return new SListIterator<>(head, this);
 
     }
@@ -29,14 +32,17 @@ class SList<E> {
 
 
 class SListIterator<E>{
+    //SListIterator class, it is used to add and remove objects from Slist
     private Node<E> head;
     private SList<E> s1;
     SListIterator(Node<E> head, SList<E> s){
+        //passing SList into generator method so that slist can be updated after adding or removing
         this.head = head;
         this.s1 = s;
     }
     public void add(E data){
-        if (head == null) {
+        //this method adds data at the end of the Slist
+        if (head == null) {//if head is not there, create a head
             head = new Node<E>(data);
             s1.head = head;
             return;
@@ -49,6 +55,7 @@ class SListIterator<E>{
     }
 
     public void remove(E data){
+        //this will remove a particular given data from the Slist
         if (head == null) return;
         if (head.data.equals(data)) {
             head = head.next;

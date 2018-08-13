@@ -28,11 +28,11 @@ public class CharCount {
             String line = input.nextLine();
             char[] ch = line.toCharArray();
             for(char ch1:ch){
-                if(counter.containsKey(ch1)){
-                    counter.put(ch1,counter.get(ch1)+1);
+                if(counter.containsKey(ch1)){//checks if key is present
+                    counter.put(ch1,counter.get(ch1)+1);// add 1 to its value
                 }
                 else {
-                    counter.put(ch1,1);
+                    counter.put(ch1,1);//if key is not there, key is inserted and
                 }
             }
 

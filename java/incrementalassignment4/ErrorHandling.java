@@ -56,6 +56,9 @@ public class ErrorHandling {
         finally is working if the error inside the try block
         it is working if null point exception occurs inside try block
          */
+        catch (Exception e){
+            e.printStackTrace();
+        }
         finally {
             System.out.println("finally clause is executed");
         }

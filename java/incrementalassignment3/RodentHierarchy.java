@@ -1,13 +1,9 @@
-class Rodent {
+abstract class Rodent {
     public Rodent(){
         System.out.println("Rodent created");
     }
-    public void move(){
-        System.out.println("walk");
-    }
-    public void eat(){
-        System.out.println("insects");
-    }
+    public abstract void move();
+    public abstract void eat();
 }
 
 class Mouse extends Rodent {
@@ -44,7 +40,7 @@ class Hamster extends Rodent {
         System.out.println("hamster eats snakes");
     }
 }
-public class RodentHierarchy {
+public class Test {
     public static void main(String args[]){
         Rodent rod[] = new Rodent[3];
         rod[0] = new Mouse();
